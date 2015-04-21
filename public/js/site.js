@@ -105,7 +105,15 @@ function contents(){
 /* home page functions */
 
 function home(){
-    $("#homediv").show();
+    $.get("/home.md", function(dat){
+        $("#postsdiv").html(marked(dat)).show();
+        // scroll to the top of the div
+        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
+    }, "text").fail(function(){
+        var md = "## Error.\n\nPage not found";
+        $("#postsdiv").html(marked(md)).show();
+        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
+    });
 }
 
 
@@ -114,7 +122,15 @@ function home(){
 /* about page functions */
 
 function about(){
-    posts("/posts/about.md");
+    $.get("/about.md", function(dat){
+        $("#postsdiv").html(marked(dat)).show();
+        // scroll to the top of the div
+        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
+    }, "text").fail(function(){
+        var md = "## Error.\n\nPage not found";
+        $("#postsdiv").html(marked(md)).show();
+        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
+    });
 }
 
 /* post page functions */
