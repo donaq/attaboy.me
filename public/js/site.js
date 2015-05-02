@@ -102,27 +102,19 @@ function contents(){
 
 /* end contents page functions */
 
-/* home page functions */
+/* home and about page functions */
 
 function home(){
-    $.get("/home.md", function(dat){
-        $("#postsdiv").html(marked(dat)).show();
-        // scroll to the top of the div
-        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
-    }, "text").fail(function(){
-        var md = "## Error.\n\nPage not found";
-        $("#postsdiv").html(marked(md)).show();
-        $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
-    });
+    homeabout("home");
 }
-
-
-/* end home page functions */
-
-/* about page functions */
 
 function about(){
-    $.get("/about.md", function(dat){
+    homeabout("about");
+}
+
+function homeabout(ha){
+    var mdname = ha + ".md";
+    $.get(mdname, function(dat){
         $("#postsdiv").html(marked(dat)).show();
         // scroll to the top of the div
         $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
@@ -132,6 +124,8 @@ function about(){
         $("html, body").animate({scrollTop: $("#postsdiv").offset().top}, 500);
     });
 }
+
+/* end home and about page functions */
 
 /* post page functions */
 
