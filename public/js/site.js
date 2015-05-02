@@ -23,8 +23,8 @@ function dispatcher(){
         splitted = stripped.split("/"),
         page = splitted[0],
         controllers = {"contents": contents,
-            "": home,
-            "about": about,
+            "": function(){ homeabout(null, "home") },
+            "about": homeabout,
             "posts": posts
         };
 
@@ -32,7 +32,7 @@ function dispatcher(){
     activate_tab(page);
 
     $(".hideonchange").hide();
-    controllers[page](stripped);
+    controllers[page](stripped, page);
 }
 
 // simple check for change in hash.
@@ -104,16 +104,9 @@ function contents(){
 
 /* home and about page functions */
 
-function home(){
-    homeabout("home");
-}
-
-function about(){
-    homeabout("about");
-}
-
-function homeabout(ha){
-    var mdname = ha + ".md";
+function homeabout(stripped, page){
+    // here we just show either /home.md or /about.md
+    var mdname = page + ".md";
     $.get(mdname, function(dat){
         $("#postsdiv").html(marked(dat)).show();
         // scroll to the top of the div
@@ -132,8 +125,6 @@ function homeabout(ha){
 function posts(loc){
     var lockey = "/" + loc;
     $.get(lockey, function(dat){
-        // messy hack to put the title in
-        var md = "# " + postdat.by_location[lockey].title + "\n\n" + dat;
         // render the markdown and inject into the div
         $("#postsdiv").html(marked(md)).show();
         // scroll to the top of the div
