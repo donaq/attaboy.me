@@ -28,7 +28,7 @@ function dispatcher(){
             "posts": posts
         };
     // google analytics
-    _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
+    ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
 
     // handle highlighting of active tab
     activate_tab(page);
