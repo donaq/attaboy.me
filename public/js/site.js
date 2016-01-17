@@ -25,7 +25,7 @@ function dispatcher(){
         controllers = {"contents": contents,
             "": function(){ homeabout(null, "home") },
             "about": homeabout,
-            "posts": posts
+            "posts": posts_handler
         };
 
     // handle highlighting of active tab
@@ -34,7 +34,7 @@ function dispatcher(){
     $(".hideonchange").hide();
     controllers[page](stripped, page);
     // google analytics
-    if(typeof(ga)!="undefined")
+    if(typeof ga!=="undefined")
         ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
 }
 
@@ -87,8 +87,12 @@ function contents(){
         pkeys = Object.keys(posts);
     if(pkeys.length==0){
         $("#contentsdiv").append('<p class="contentsitem">No posts yet. The site owner should probably do something about that.</p>');
+        console.log("bleep");
         return $("#contentsdiv").show();
     }
+
+    var splitted = arguments[0].split("/");
+    console.log(splitted);
 
     //var htmlstr = '<p class="contentsitem"><a href="#' + post.location + '">' + post.title + '</a>';
     //$("#contentsdiv").append(htmlstr);
@@ -117,7 +121,7 @@ function homeabout(stripped, page){
 
 /* post page functions */
 
-function posts(loc){
+function posts_handler(loc){
     var lockey = "/" + loc;
     $.get(lockey, function(dat){
         // render the markdown and inject into the div
