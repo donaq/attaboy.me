@@ -27,14 +27,15 @@ function dispatcher(){
             "about": homeabout,
             "posts": posts
         };
-    // google analytics
-    ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
 
     // handle highlighting of active tab
     activate_tab(page);
 
     $(".hideonchange").hide();
     controllers[page](stripped, page);
+    // google analytics
+    if(typeof(ga)!="undefined")
+        ga('send', 'pageview', {'page': location.pathname+location.search+location.hash});
 }
 
 // simple check for change in hash.
