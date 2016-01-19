@@ -87,12 +87,21 @@ function contents(){
         pkeys = Object.keys(posts);
     if(pkeys.length==0){
         $("#contentsdiv").append('<p class="contentsitem">No posts yet. The site owner should probably do something about that.</p>');
-        console.log("bleep");
         return $("#contentsdiv").show();
     }
 
-    var splitted = arguments[0].split("/");
-    console.log(splitted);
+    var splitted = arguments[0].split("/"),
+        order = splitted.slice(0, 2),
+        sections = splitted.slice(2),
+        selen = sections.length;
+    for(var i=0;i<selen;i++){
+        var k = sections[i];
+        if(!(k in posts)){
+            $("#contentsdiv").append('<p class="contentsitem">/ ' + sections.join(" / ") + ' does not exist!</p>');
+            return $("#contentsdiv").show();
+        }
+        posts = posts[k];
+    }
 
     //var htmlstr = '<p class="contentsitem"><a href="#' + post.location + '">' + post.title + '</a>';
     //$("#contentsdiv").append(htmlstr);
