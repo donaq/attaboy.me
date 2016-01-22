@@ -102,7 +102,7 @@ function contents(){
     var breadcrumbs = '<p class="contentsitem">location: <a href="#contents/alpha">Top</a> / ';
 
     for(var i=0;i<selen;i++){
-        var k = sections[i];
+        var k = decodeURIComponent(sections[i]);
         // deal with non-existent section
         if(!(k in posts)){
             $("#contentsdiv").append('<p class="contentsitem">/ ' + sections.join(" / ") + ' does not exist!</p>');
