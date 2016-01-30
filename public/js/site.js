@@ -10,9 +10,14 @@ function get_compare(page){
     function default_compare(a,b){ return -1; }; // do nothing
     function chronomod(a,b){ return a['modified']<b['modified']?-1:1; };
     function reversechronomod(a,b){ return chronomod(a,b)*-1; };
+    function alpha(a,b){
+        if(a instanceof String) return a<b?-1:1;
+        return a['title']<b['title']?-1:1;
+    };
+
 
     if(page=="contents/blag") return reversechronomod;
-    return default_compare;
+    return alpha;
 }
 
 /* site functions */
@@ -29,7 +34,7 @@ function activate_tab(page){
 // dispatcher function
 function dispatcher(){
     var currhash = location.hash.slice(1),
-        stripped = currhash.replace(/^\/+|\/+$/gm,''),
+        stripped = decodeURIComponent(currhash.replace(/^\/+|\/+$/gm,'')),
         splitted = stripped.split("/"),
         page = splitted[0],
         controllers = {"contents": contents,
@@ -90,7 +95,7 @@ function to_level(sections, posts, errdiv){
     var selen = sections.length;
 
     for(var i=0;i<selen;i++){
-        var k = decodeURIComponent(sections[i]);
+        var k = sections[i];
         // deal with non-existent section
         if(!(k in posts)){
             $(errdiv).append('<p class="contentsitem">/ ' + sections.join(" / ") + ' does not exist!</p>');
@@ -108,7 +113,7 @@ function get_breadcrumbs(sections, posts){
         breadcrumbs = '<p class="contentsitem">location: <a href="#contents">Top</a> / ';
 
     for(var i=0;i<selen;i++){
-        var k = decodeURIComponent(sections[i]);
+        var k = sections[i];
         // breadcrumbing
         breadcrumbs = breadcrumbs + '<a href="#' + prefix + '/' + k + '">' + k + '</a> / ';
         prefix = prefix + k + '/';
