@@ -1,5 +1,9 @@
 # Welcome!
 
+## Update
+
+Yay! Finally finished "[The Crapsack World of Vampires](#posts/fiction/Vampire Tales/0)", my attempt at reasoning out what real bloodsucking immortal creatures derived from infected humanity must be like.
+
 ## _Update_
 
 Hello imaginary readers. I am still writing, but I am working on a longer piece which is taking more than one day because 1) it is long and 2) I can only work on it at night during weekdays. If you're impatient, you can go check out the progress at [github](https://github.com/donaq/attaboy.me/tree/vampires-wip).
