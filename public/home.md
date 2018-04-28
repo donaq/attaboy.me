@@ -2,6 +2,10 @@
 
 ## Update
 
+An [update](#posts/blag/12)! After almost a year!
+
+## Update
+
 Yay! Finally finished "[The Crapsack World of Vampires](#posts/fiction/Vampire Tales/0)", my attempt at reasoning out what real bloodsucking immortal creatures derived from infected humanity must be like.
 
 ## _Update_
