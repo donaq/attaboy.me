@@ -1,4 +1,5 @@
 var now = new Date(), // rarely used
+    d = now.getTime();
     activetabmap = { "contents": "contentsli",
         "about": "aboutli"
     },
@@ -87,7 +88,7 @@ function refresh_dat(){
         };
     }else cb = nocb;
 
-    $.getJSON("/posts/index.json", cb);
+    $.getJSON("/posts/index.json?timearg=" + d, cb);
 }
 
 // returns a map of titles to index in input array
@@ -196,7 +197,7 @@ function contents(){
 
 function homeabout(stripped, page){
     // here we just show either /home.md or /about.md
-    var mdname = page + ".md";
+    var mdname = page + ".md?timearg="+d;
     $.get(mdname, function(dat){
         $("#postsdiv").html(marked(dat)).show();
         // scroll to the top of the div
@@ -237,7 +238,7 @@ function posts_handler(){
     }catch(err){
         return failfunc();
     }
-    $.get(ln, function(dat){
+    $.get(ln+"?timearg="+d, function(dat){
         // render the markdown and inject into the div
         $("#postsdiv").html(breadcrumbs + marked(dat)).show();
         // scroll to the top of the div
