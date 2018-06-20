@@ -2,6 +2,10 @@
 
 ## Update
 
+Yay! Finished working on [Topovica](/#posts/tech/Blitz%20Bot/0)! Moving on to the doing some other cool stuff next!
+
+## Update
+
 An [update](#posts/blag/12)! After almost a year!
 
 ## Update

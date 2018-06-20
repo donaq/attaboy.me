@@ -24,9 +24,9 @@ Anyway, I highly recommend this specialization to anyone who is interested in th
 
 ## [attaboy.me](https://attaboy.me)
 
-Finally got round to doing some chores for this site that I had been putting off because I was busy with the course.
+Finally got round to continuing work on some projects that I had been putting off because I was busy with the course.
 
-1. SSL for this site (thanks again [letsencrypt](https://letsencrypt.org/)!)
+1. SSL for this site (thanks again [letsencrypt](https://letsencrypt.org/)!) Honestly, no one reads this site, so no one cares, but hey, no one in between you and me needs to know what goes on here, baby.
 
 2. Setting up a [webhook](https://developer.github.com/webhooks/) so that this site updates itself when I push to github. Previously, I had a cron job that did a `git pull` every minute. I know, I know, it was ugly as fuck, not to mention discourteous to github, but hey, it worked. The reason why I did it that way was because I was reluctant to set up server side logic on a raspberry pi. At the time, I would have probably done it in Python. However, with my newly acquired 1337 Go skillz, it became less of an issue. The compiled go binary I'm running to handle the webhook consumes very little memory.
 
@@ -36,4 +36,4 @@ Finally got round to doing some chores for this site that I had been putting off
 
 I had previously written a [bot](https://github.com/donaq/blitzbot) to play Bejeweled Blitz for me at superhuman levels. This was accomplished by encoding my human knowledge of how to play this game into Python and having it click on the game board faster than a human could. I will, after having either finished or given up on topovica, attempt to get my computer to learn how to play the game on its own with just pixels and current score as inputs. This, and presenting how it was done, will be part of my development plan for the 2018/2019 work year. I'll try to document what I do here as I do it.
 
-I'm gonna have so much fun!
+The next few months promise to be fun. 😄
