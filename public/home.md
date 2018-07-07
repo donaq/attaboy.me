@@ -2,7 +2,7 @@
 
 ## Update
 
-Yay! Finished working on [Topovica](/#posts/tech/Blitz%20Bot/0)! Moving on to the doing some other cool stuff next!
+Yay! Finished working on [Topovica](/#posts/tech/Blitz%20Bot/0)! Moving on to the doing of some other cool stuff next!
 
 ## Update
 

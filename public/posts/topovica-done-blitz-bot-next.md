@@ -18,7 +18,7 @@ As usual, if my code causes your computer to explode or you to contract venereal
 
 Enough about the past. I intend to write a program that will learn to play [Bejeweled Blitz](https://apps.facebook.com/bejeweledblitz) using [DL](https://en.wikipedia.org/wiki/Deep_learning) and [RL](https://en.wikipedia.org/wiki/Reinforcement_learning) techniques for the purpose of practising what I have learned for the first half of the year on [Coursera](https://www.coursera.org/specializations/deep-learning). The plan of attack is as follows.
 
-1. Choose a weapon. Right now I am thinking [DL4J](https://deeplearning4j.org/documentation) (a deep learning library written in Java), so that I can use [Clojure](https://clojure.org/), my learning of which is another of the tasks I had neglected to focus on the deep learning course. Unfortunately, the state of the art seems to mostly be in Python right now, so I might have to abandon this and go for [PyTorch](https://pytorch.org/) instead.
+1. Choose a weapon. Right now I am thinking [DL4J](https://deeplearning4j.org/documentation) (a deep learning library written in Java), so that I can use [Clojure](https://clojure.org/), my learning of which is another of the tasks I had neglected in order to focus on the deep learning course. Unfortunately, the state of the art seems to mostly be in Python right now, so I might have to abandon this and go for [PyTorch](https://pytorch.org/) instead.
 
 2. Write an Google Chrome browser extension capable of sending messages to a http server running locally when I browse to the Blitz page.
 
